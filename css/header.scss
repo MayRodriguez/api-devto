@@ -1,0 +1,86 @@
+@import "vars";
+
+.navbar__container--white {
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    .navbar-brand > .navbar__logo {
+      width: 50px;
+      height: auto;
+    }
+    .navbar__search-container {
+      max-width: 100%;
+      width: 400px;
+      .input-group .button__search {
+        right: 50px;
+        &:hover {
+          background-color: rgba(59, 73, 223, 0.1);
+          color: rgb(47, 58, 178);
+        }
+      }
+    }
+  }
+  
+  .search__section {
+      .navbar__search-container {
+          max-width: 100%;
+          width: 500px;
+          .input-group .button__search {
+            right: 50px;
+            &:hover {
+              background-color: rgba(59, 73, 223, 0.1);
+              color: rgb(47, 58, 178);
+            }
+          }
+        }
+    .search__section-link {
+      color: #575757;
+      &.active {
+        color: $black;
+        font-weight: bold;
+      }
+    }
+    .side__menu-link {
+      color: $link-color;
+      font-size: 16px;
+    }
+  }
+  
+  .navbar__container-right {
+    .navbar__buttton--transparent {
+      background-color: transparent;
+    }
+    ul.dropdown__menu {
+      max-width: 360px;
+      width: 210px;
+    }
+  }
+  
+  .button__primary--purple {
+    color: rgb(47, 58, 178);
+    background-color: transparent;
+    border: 1px solid rgb(47, 58, 178);
+    padding: 8px;
+    &:hover {
+      color: #fff;
+      background-color: rgb(47, 58, 178);
+      text-decoration: underline;
+    }
+  }
+  
+  .button__primary--transparent-purple {
+    background-color: transparent;
+    &:hover {
+      background-color: rgba(59, 73, 223, 0.1);
+      color: rgb(47, 58, 178);
+      border-radius: 10px;
+      text-decoration: underline;
+    }
+  }
+  
+  .user__profile {
+    width: 40px;
+    height: 40px;
+    &:hover {
+      border: 3px solid #b5b5b5;
+    }
+  }

@@ -1,0 +1,67 @@
+/*Generales*/
+body {
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  box-sizing: content-box;
+}
+
+/*Header*/
+/*Header*/
+/*Side izquierda*/
+.side__link {
+  color: rgb(64, 64, 64);
+}
+
+.social__links .side__link:hover {
+  background-color: rgba(59, 73, 223, 0.1);
+  fill: rgb(47, 58, 178);
+}
+
+.social__links .side__link.side__link--underline:hover {
+  text-decoration: underline;
+  color: rgb(47, 58, 178);
+}
+
+.home-section__link__hover:hover {
+  background-color: rgba(59, 73, 223, 0.1);
+  border-radius: 5px;
+}
+.home-section__link__hover:hover > .side__link {
+  text-decoration: underline !important;
+  color: rgb(47, 58, 178);
+}
+
+.tag__dropdown {
+  height: 350px;
+}
+
+/*Side izquierda*/
+/*Side  main*/
+.link__text {
+  color: #000;
+}
+.link__text:hover {
+  color: rgb(47, 58, 178);
+}
+
+main .hashtags__hover {
+  font-size: 14px;
+}
+main .hashtags__hover:hover {
+  background-color: #e1e1e1;
+  border: 1px solid grey;
+}
+
+main .topmenu__texts--hover:hover {
+  background-color: #fff;
+  color: rgb(47, 58, 178);
+  text-decoration: underline;
+}
+
+/*Side main*/
+/*Side derecha*/
+.aside-blog__card-right {
+  width: 352px;
+}
+
+/*Side derecha*//*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,78 @@
+@import "vars";
+/*Generales*/
+
+body {
+  background-color: #f5f5f5;
+  font-family: $font-family-primary;
+  box-sizing: content-box;
+}
+
+/*Header*/
+
+/*Header*/
+
+/*Side izquierda*/
+.side__link {
+    color: $link-color;
+}
+
+.social__links .side__link {
+  &:hover {
+    background-color: $background-hover-purple;
+    fill: $link-color-hover-purple;
+  }
+}
+
+.social__links .side__link.side__link--underline {
+  &:hover {
+    text-decoration: underline;
+    color: $link-color-hover-purple;
+  }
+}
+.home-section__link__hover:hover {
+    background-color: $background-hover-purple;
+    border-radius: 5px;
+    >.side__link {
+        text-decoration: underline !important;
+        color: $link-color-hover-purple;
+    }
+}
+.tag__dropdown {
+    height: 350px;
+}
+/*Side izquierda*/
+
+/*Side  main*/
+
+.link__text {
+  color: $black;
+  &:hover {
+    color: $link-color-hover-purple;
+  } 
+}
+
+main .hashtags__hover {
+  font-size: 14px;
+  &:hover {
+    background-color: #e1e1e1;
+    border: 1px solid grey;
+  }
+}
+
+main .topmenu__texts--hover{
+  &:hover {
+    background-color: #fff;
+    color: $link-color-hover-purple;
+    text-decoration: underline;
+  }
+}
+
+/*Side main*/
+
+/*Side derecha*/
+
+.aside-blog__card-right {
+  width: 352px;
+}
+
+/*Side derecha*/

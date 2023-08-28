@@ -9,6 +9,12 @@ router.post("/", async (request, response) =>{
 
         const userData = request.body;
         const newUser = await users.create(userData);
+
+        response.status(201)
+        response.json({
+            message: "user created",
+            data:{ newUser}
+        })
         
         
     }catch(error){

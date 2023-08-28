@@ -33,6 +33,11 @@ async function getAllUsers(){
 
 }
 
+//Buscar user por Id
+
+
+
+
 module.exports = {
     create,
     getAllUsers

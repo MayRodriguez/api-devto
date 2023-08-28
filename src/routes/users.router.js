@@ -24,8 +24,7 @@ router.post("/", async (request, response) =>{
         message: "something went wrong",
         error: error.message,
     });
-
     }
-
-
 })
+
+module.exports = router;

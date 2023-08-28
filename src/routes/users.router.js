@@ -1,6 +1,9 @@
 const express = require("express")
-const users = require("../usecases/koder.usecase")
+const users = require("../usecases/user.usecase")
 
 const router = express.Router();
 
 
+router.post("/", (request, response) =>{
+
+})

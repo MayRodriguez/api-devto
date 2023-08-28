@@ -25,6 +25,15 @@ async function create(userData){
     return newUser
 }
 
+//Get User, obtener todos los usuarios
+
+async function getAllUsers(){
+    const allUsers = await userModel.find();
+    return allUsers
+
+}
+
 module.exports = {
-    create
+    create,
+    getAllUsers
 }

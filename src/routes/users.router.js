@@ -48,9 +48,17 @@ router.post("/", async (request, response) =>{
     }
 })
 
-router.get("/:id",(request, response) =>{
+router.get("/:id",async (request, response) =>{
     try{
-        
+        const id = request.params.id;
+        const user = await users.getUserById(id)
+        response.json({
+            message: `User ${user}`,
+            data:{
+                user
+            }
+        })
+
 
     }catch(error){
         response.status(error.status || 500);

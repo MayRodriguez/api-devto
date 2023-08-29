@@ -4,9 +4,6 @@ function redirectToIndexWithQuery() {
   window.open(url, "_self"); // Utiliza "_self" para abrir la URL en la misma ventana
 }
 
-// Agrega un evento 'click' al enlace con la imagen
-
-
 import {getJson} from "./api.js";
 
 const printFirstTagMiniPost = (postObject, firstTag, secondTag, key) => {
@@ -91,7 +88,7 @@ const printMiniPost = (postObject, key) =>
 
 const printPost = async () => {
     const res = await getJson();
-    const posts = res.posts;
+    const posts = res.data.posts;
     let random = Math.floor(Math.random() * (posts.length));
     printRandomPost(posts[random], posts[random]._id);
 

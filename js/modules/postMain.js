@@ -1,6 +1,6 @@
 const getPosts = async () => {
   let response = await fetch(
-    "http://localhost:3003/post"
+    "http://localhost:3001/post"
   );
   let data = await response.json();
   return data;
@@ -311,7 +311,7 @@ const removeElementsById = (idElement) => {
 
 const topFilter = async () => {
   const res = await getPosts();
-  const posts = res.posts;
+  const posts = res.data.posts;
   removeElementsById("postContainer");
 
   let relevantId = document.getElementById("relevantBtn");
@@ -338,7 +338,7 @@ const topFilter = async () => {
 
 const latestFilter = async () => {
   const res = await getPosts();
-  const posts = res.posts;
+  const posts = res.data.posts;
   removeElementsById("postContainer");
 
   let relevantId = document.getElementById("relevantBtn");
@@ -371,7 +371,7 @@ const latestFilter = async () => {
 
 const relevantFilter = async () => {
   const res = await getPosts();
-  const posts = res.posts;
+  const posts = res.data.posts;
   removeElementsById("postContainer");
 
   let relevantId = document.getElementById("relevantBtn");

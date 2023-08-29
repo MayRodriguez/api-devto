@@ -1,4 +1,6 @@
 const Post = require('../src/models/post.model');
+const PostUsecase = require("../src/usecases/post.usecase")
+
 
 const getPosts = async (req, res) => {
     try{
@@ -29,8 +31,28 @@ const getPostById = async(req, res) => {
     }
 }
 
+const getSearch = async (req, res) => {
+    try {
+        const {title} = req.query
+        const allPosts = await PostUsecase.getAll(title);
+        res.json({
+            message: "Post con: ", title, 
+            data: {
+                practices: allPosts
+            }
+        })
+        } catch (err) {
+            res.status(500);
+            res.json({
+                message: "something went wrong",
+                error: err.message
+            })
+        }
+}
+
 module.exports = {
     getPosts,
     createPost,
-    getPostById
+    getPostById,
+    getSearch
 };

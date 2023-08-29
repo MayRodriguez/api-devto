@@ -5,7 +5,7 @@ Este servidor esta diseñado para poder recrear los requerimientos basicos de lo
 
 Este repositorio está disponible y  abierto al público interesado en desarrollar código Back End.
 
-Colaboradores (Equipo 4):
+Colaboradores (Equipo 2):
 - May Rodriguez
 - Héctor Hernández
 - Oscar Guerrero Maya

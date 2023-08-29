@@ -1,6 +1,7 @@
 const express = require("express")
 const users = require("../usecases/user.usecase")
 
+
 const router = express.Router();
 
 
@@ -45,6 +46,20 @@ router.post("/", async (request, response) =>{
         error: error.message,
     });
     }
+})
+
+router.get("/:id",(request, response) =>{
+    try{
+        
+
+    }catch(error){
+        response.status(error.status || 500);
+    response.json({
+      message: "something went wrong",
+      error: error.message,
+    });
+    }
+
 })
 
 module.exports = router;

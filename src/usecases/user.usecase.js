@@ -34,11 +34,21 @@ async function getAllUsers(){
 }
 
 //Buscar user por Id
-
+async function getUserById(id){
+    if(!mongoose.isValidObjectId(id)){
+        throw new createError(400, "Invalid id")
+    }
+    const user = await userModel.findById(id)
+    if(!user){
+        throw new createError(404, "User not found ")
+    }
+    return user
+}
 
 
 
 module.exports = {
     create,
-    getAllUsers
+    getAllUsers, 
+    getUserById
 }

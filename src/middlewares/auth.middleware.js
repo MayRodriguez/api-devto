@@ -7,7 +7,7 @@ function auth(req, res, next){
         if(!authorization){
             throw new createError(401, "token required")
         }
-        const token = authorization.replace("Bearer", '');
+        const token = authorization.replace("Bearer ", '');
         const payload = jwt.verify(token)
         if(!payload) {
             throw new createError(401, "couldn't verify token");

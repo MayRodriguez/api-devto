@@ -11,7 +11,11 @@ async function getAll(search = '') {
     // }
     // return Practice.find(filters).populate("koder")
 
-    // console.log(titleFilter)
-    
-    return Post.find({title: { $regex: search, $options: 'i' } }).populate("user"); //Buscamos a koder en el modelo
+    console.log(search)
+    return Post.find({title: { $regex: search, $options: 'i' } })
+    // return Post.find({title: { $regex: search, $options: 'i' } }).populate("user"); //Buscamos a koder en el modelo
+}
+
+module.exports = {
+    getAll,
 }

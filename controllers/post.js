@@ -33,12 +33,12 @@ const getPostById = async(req, res) => {
 
 const getSearch = async (req, res) => {
     try {
-        const {title} = req.query
-        const allPosts = await PostUsecase.getAll(title);
+        const {search} = req.query
+        const allPosts = await PostUsecase.getAll(search);
         res.json({
-            message: "Post con: ", title, 
+            message: "lista de posts",
             data: {
-                practices: allPosts
+                posts: allPosts
             }
         })
         } catch (err) {

@@ -90,8 +90,9 @@ const printMiniPost = (postObject, key) =>
 
 
 const printPost = async () => {
+  // console.log(await getJson())
     const res = await getJson();
-    const posts = res.posts;
+    const posts = res.data.posts;
     let random = Math.floor(Math.random() * (posts.length));
     printRandomPost(posts[random], posts[random]._id);
 

@@ -14,7 +14,7 @@ async function login (email, password){
     }
 
     //generar jwt
-    return jwt.sign({id: User._id    })
+    return jwt.sign({id: user._id    })
 }
 module.exports = {
     login

@@ -6,9 +6,9 @@ const auth = require("../middlewares/auth.middleware")
 // define the home page route
 // router.get('/', getPosts);
 // router.get('/', auth, getPosts); // necesita token
-router.post('/create', createPost);
-router.get('/:postId', getPostById);
 router.get("/", getSearch);
+router.post('/create', auth, createPost);
+router.get('/:postId', getPostById);
 
 
 module.exports = router;

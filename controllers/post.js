@@ -11,15 +11,6 @@ const getPosts = async (req, res) => {
     };
 };
 
-// const createPost = async(req, res) => {
-//     try{
-//         const newPost = new Post(req.body);
-//         await newPost.save();
-//         return res.json({ ok: true, newPost, name: true });
-//     }catch(error){
-//         res.send({ ok: false, message: error?.message });
-//     }
-// }
 const createPost = async (req, res) => {
     try {
         postData = req.body;

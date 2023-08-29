@@ -1,22 +1,20 @@
-const express = require('express');
-const cors = require('cors')
-const app = express();
-const connectDB = require('./db');
-const postRouter = require('./src/routes/post.route');
-const authRouter = require("./src/routes/auth.route");
+require("dotenv").config();
+const mongoose = require("mongoose")
+const server = require("./src/server")
+const PORT = process.env.PORT || 8081;
 
-require('dotenv').config();
-const port = process.env.PORT || 3000;
+const DB_USER = process.env.DB_USER
+const DB_PASSWORD = process.env.DB_PASSWORD
+const DB_HOST = process.env.DB_HOST
+const DB_NAME = process.env.DB_NAME
 
-connectDB();
-
-
-app.use(express.json());
-app.use(cors());
-
-app.use('/auth', authRouter)
-app.use('/post', postRouter);
-
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-});
+mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`)
+    .then(() => {
+        console.log("DB conected");
+        server.listen(PORT, () => {
+            console.log(`Server listening on port: ${PORT}`)
+            });
+        }) 
+    .catch((err) => {
+        console.error("DB Error:", err)
+    })

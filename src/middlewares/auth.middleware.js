@@ -4,8 +4,8 @@ const createError = require("http-errors");
 function auth(req, res, next){
     try {
         console.log('auth', authorization)
-        // const {authorization} = req.headers;
-        const {authorization} = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZWNiNWY1N2UwMDdkNzJkODUwODZjYSIsImlhdCI6MTY5MzI4MDg4MSwiZXhwIjoxNjkzNDUzNjgxfQ.HemK3d-IVBdg_EiAMwERK2VSnCBDVmQjBIBdkV8SaSs"
+        const {authorization} = req.headers;
+        // const {authorization} = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZWNiNWY1N2UwMDdkNzJkODUwODZjYSIsImlhdCI6MTY5MzI4MDg4MSwiZXhwIjoxNjkzNDUzNjgxfQ.HemK3d-IVBdg_EiAMwERK2VSnCBDVmQjBIBdkV8SaSs"
         if(!authorization){
             throw new createError(401, "token required")
         }

@@ -12,24 +12,41 @@ const getPostData = async() => {
 getPostData();
 
 const createPostCard = (postObject) => {
+  console.log(postObject)
+  console.log(postObject.title)
+
   let {author, comentsData, createdDate, image, tags, title} = postObject;
-  let allTags = []
-  for(let i=0; i<tags.length; i++) {
-    allTags += `${tags[i]} `;
+  console.log(postObject.title)
+  if(tags) {
+    let allTags = []
+    for(let i=0; i<tags.length; i++) {
+      allTags += `${tags[i]} `;
+    }
   }
-  const [date, hour] = createdDate.split("T");
+if(title) { 
+  const [date, hour] = postObject.created.split("T");
   document.getElementById('post-image').src = image;
-  document.getElementById('author-name').innerText = author;
+  document.getElementById('author-name').innerText = postObject.user;
   document.getElementById('date-post').innerText = `Posted on ${date} `;
-  document.getElementById('title-post').innerText = title ;
-  document.getElementById('hashtag-post').innerText = allTags;
-  document.getElementById('bodytext-post').innerText = comentsData;
+  document.getElementById('title-post').innerText = postObject.title ;
+  document.getElementById('bodytext-post').innerText = postObject.body;
+}
+
+const [date, hour] = createdDate.split("T");
+document.getElementById('post-image').src = image;
+document.getElementById('author-name').innerText = author;
+document.getElementById('author-name').innerText = author;
+document.getElementById('date-post').innerText = `Posted on ${date} `;
+document.getElementById('title-post').innerText = title ;
+document.getElementById('bodytext-post').innerText = comentsData;
+
+  // document.getElementById('hashtag-post').innerText = allTags;
 
 };
 
 const printPost = async () => {
   const res = await getPosts();
-  const posts = res.posts;
+  const posts = res.data.posts;
 
   let cardWrapper = document.getElementById('card-wrapper');
 

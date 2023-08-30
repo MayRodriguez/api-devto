@@ -1,18 +1,16 @@
 const bcryptjs = require("bcryptjs");
-const saltRound = 10
+
+const saltRounds = 10;
 
 function encrypt(text) {
-    console.log('encrypt: ', text);
-    return bcryptjs.hashSync(text, saltRound)
+  return bcryptjs.hashSync(text, saltRounds);
 }
 
 function verify(hash, text) {
-    console.log('verify, hash: ', hash, 'text: ', text);
-
-    return bcryptjs.compareSync(text, hash)
+  return bcryptjs.compareSync(text, hash);
 }
 
 module.exports = {
-    encrypt,
-    verify
-}
+  encrypt,
+  verify,
+};

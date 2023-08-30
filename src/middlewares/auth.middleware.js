@@ -2,8 +2,6 @@ const jwt = require("../lib/jwt");
 const createError = require("http-errors");
 
 function auth(req, res, next){
-
-    console.log('auth', authorization)
     try {
         const {authorization} = req.headers;
         if(!authorization){

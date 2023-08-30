@@ -1,16 +1,16 @@
-const express = require("express");
+const express = require('express')
+const router = express.Router();
+const { createPost, getPostById, getSearch } = require('../../controllers/post');
 const auth = require("../middlewares/auth.middleware")
+const posts = require("../usecases/post.usecase");
 
 router.get("/", getSearch);
 router.post('/',  createPost);
 router.get('/:postId', getPostById);
-
-
-module.exports = router;
 const posts = require("../usecases/posts.usecase");
 
-const router = express.Router();
-/*
+router = express.Router();
+
 router.post("/", auth, async (request, response) => {
     try {
       const publishData = request.body;
@@ -74,7 +74,7 @@ router.post("/", auth, async (request, response) => {
     }
   });
 
-  */
+  
 
 
 

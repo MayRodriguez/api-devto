@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-const ModelUser = require("../models/user.model")
 const createError = require("http-errors")
 const bcryptjs = require("../lib/bcrypt")
 const userModel = require("../models/user.model")
@@ -19,9 +18,9 @@ async function create(userData){
         throw new createError(400, "Password too weak")
     }
 
-    koderData.password = bcryptjs.encrypt(koderData.password)
+    userData.password = bcryptjs.encrypt(userData.password)
 
-    const newUser = await userModel.create(koderData)
+    const newUser = await userModel.create(userData)
     return newUser
 }
 

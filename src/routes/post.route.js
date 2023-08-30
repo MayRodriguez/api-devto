@@ -1,5 +1,12 @@
 const express = require("express");
 const auth = require("../middlewares/auth.middleware")
+
+router.get("/", getSearch);
+router.post('/',  createPost);
+router.get('/:postId', getPostById);
+
+
+module.exports = router;
 const posts = require("../usecases/posts.usecase");
 
 const router = express.Router();

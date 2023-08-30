@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.post("/login", async (req, res) => {
     try {
+        console.log('pase aqui')
         const {email, password} = req.body
         const token = await authUsecase.login(email, password);
         res.json({

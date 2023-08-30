@@ -2,6 +2,7 @@ const Post = require('../src/models/post.model');
 const PostUsecase = require("../src/usecases/post.usecase")
 
 
+
 const getPosts = async (req, res) => {
     try{
         const posts = await Post.find();
@@ -36,6 +37,7 @@ const createPost = async (req, res) => {
 const getPostById = async(req, res) => {
     try {
         const postId = req.params.postId;
+        console.log(postId)
         const post = await Post.findById(postId);
         res.send({post});
     } catch(error){

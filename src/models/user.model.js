@@ -28,12 +28,10 @@ const userSchema = new mongoose.Schema({
   },
   created: {
     type: Date,
-    required: true,
     default: new Date(),
   },
   updated:{
     type: Date,
-    required: true,
     default: new Date()
   }
 });

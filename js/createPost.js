@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // const URL = "https://devtoequipo3-default-rtdb.firebaseio.com/POST/.json";
-  const URL = "http://localhost:3003/post/create";
+  const URL = "http://localhost:3001/post/create";
   const publishBtn = document.querySelector("#save_btn");
   publishBtn.addEventListener("click", async (event) => {
     event.preventDefault();

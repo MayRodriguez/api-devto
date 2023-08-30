@@ -7,9 +7,7 @@ const posts = require("../usecases/post.usecase");
 router.get("/", getSearch);
 router.post('/',  createPost);
 router.get('/:postId', getPostById);
-const posts = require("../usecases/posts.usecase");
 
-router = express.Router();
 
 router.post("/", auth, async (request, response) => {
     try {
